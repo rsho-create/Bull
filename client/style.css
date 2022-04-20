@@ -41,6 +41,7 @@ body {
 .bs-box-container {
     max-width: 732px;
     margin: 0 auto;
+    display: none;
 }
 
 .bs-box {
