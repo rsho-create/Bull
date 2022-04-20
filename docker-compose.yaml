@@ -11,6 +11,7 @@ services:
   #   command: bash -c "npm install"
   api:
     image: node:latest
+    working_dir: /code
     ports:
       - 3000:3000
     environment:
@@ -23,8 +24,8 @@ services:
       - db
     volumes:
       - type: bind
-        source: ./index
-        target: /index
+        source: ./api
+        target: /code
     command: bash -c "npm install && npm start && npm run dev"
 
   db:
