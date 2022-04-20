@@ -24,7 +24,6 @@ services:
       - db
   db:
     image: postgres:latest
-    environment:
-
     volumes:
-      -
+      - "dbdata:/var/lib/postgresql/data"
+      - "./db:/docker-entrypoint-config.js/:ro"
