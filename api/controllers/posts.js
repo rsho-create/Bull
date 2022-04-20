@@ -1,0 +1,16 @@
+const express = require("express");
+
+const router = express.router();
+
+const Post = require("../models/post");
+
+router.get("/", async (req, res) => {
+  try {
+    const posts = await Post.all;
+    res.json(posts);
+  } catch (err) {
+    res.status(500).send({ err });
+  }
+});
+
+module.exports = router;
