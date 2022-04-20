@@ -4,7 +4,7 @@ services:
     image: node:12.18.4
     ports:
       - 8000:8000
-    volumes: 
+    volumes:
       - type: bind
         source: ./client
         target: /code
@@ -16,13 +16,14 @@ services:
       - 3000:3000
     volumes:
       - type: bind
-      source: ./api
-      target: /code
+        source: ./api
+        target: /code
     working_dir: /code
     command: bash -c "npm install && npm run dev"
     depends_on:
       - db
   db:
     image: postgres:latest
-    environment:
-      -  
+    volumes:
+      - "dbdata:/var/lib/postgresql/data"
+      - "./db:/docker-entrypoint-config.js/:ro"
