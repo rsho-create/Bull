@@ -41,7 +41,6 @@ body {
 .bs-box-container {
     max-width: 732px;
     margin: 0 auto;
-    display: none;
 }
 
 .bs-box {
@@ -109,4 +108,16 @@ body {
 p {
     margin: 0 21px 12px;
     word-wrap: break-word;
+}
+
+.form-container {
+    max-width: 732px;
+    margin: 0 auto;
+}
+
+.header[type="text"] 
+{
+    font-size: 1em;
+    width: 100%;
+    height: 3em;
 }
